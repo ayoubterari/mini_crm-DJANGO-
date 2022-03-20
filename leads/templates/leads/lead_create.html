@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load tailwind_filters %}
+
+{% block content %}
+<br><br><br>
+<a href="/leads"  class="w-1/2 mt-3 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" > Go Back to leads </a>
+<br><br><br>
+<h1> Create a new lead </h1>
+<form method="post">
+ {% csrf_token %} 
+ {{ form|crispy }}
+   <button type="submit">submit</button>
+</form>
+
+{% endblock content %}
